@@ -3,11 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Tempo de geração: 08-Maio-2026 às 15:42
+-- Tempo de geração: 08-Maio-2026 às 16:01
 -- Versão do servidor: 8.4.9
 -- versão do PHP: 8.3.26
 
-SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -21,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de dados: `appdb`
 --
-CREATE DATABASE IF NOT EXISTS `appdb` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
-USE `appdb`;
 
 -- --------------------------------------------------------
 
@@ -30,23 +27,22 @@ USE `appdb`;
 -- Estrutura da tabela `clientes`
 --
 
-DROP TABLE IF EXISTS `clientes`;
 CREATE TABLE `clientes` (
   `id` int NOT NULL,
   `nome` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `telefone` varchar(20) DEFAULT NULL
+  `telefone` varchar(20) DEFAULT NULL,
+  `nif` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `clientes`
 --
 
-INSERT INTO `clientes` (`id`, `nome`, `email`, `telefone`) VALUES
-(1, 'Rodrigo', 'abc@sapo.pt', '123456789'),
-(3, 'Isabelly Hartmann', '14844@oficina.pt', '913522747'),
-(7, 'Tiago Dias', '14859@oficina.pt', '910566574'),
-(8, 'Rodrigo Gonçalves', '14837@oficina.pt', '913462508');
+INSERT INTO `clientes` (`id`, `nome`, `email`, `telefone`, `nif`) VALUES
+(1, 'Rodrigo', 'abc@sapo.pt', '123456789', ''),
+(3, 'Isabelly Hartmann', '14844@oficina.pt', '913522747', ''),
+(7, 'Tiago Dias', '14859@oficina.pt', '910566574', '');
 
 --
 -- Índices para tabelas despejadas
@@ -67,7 +63,6 @@ ALTER TABLE `clientes`
 --
 ALTER TABLE `clientes`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
