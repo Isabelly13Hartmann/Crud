@@ -28,9 +28,7 @@ services:
 
       - db_data:/var/lib/mysql
 
-  volumes:
 
-  db_data:
 
   phpmyadmin:
 
@@ -47,3 +45,7 @@ services:
       PMA_HOST: db
 
       MYSQL_ROOT_PASSWORD: root
+
+volumes:
+
+  db_data:

@@ -1,4 +1,5 @@
 public class Cliente {
+    // Atributos da classe Cliente
     public int id;
     public String nome;
     public String email;
