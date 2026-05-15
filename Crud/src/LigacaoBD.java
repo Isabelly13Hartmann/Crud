@@ -12,7 +12,8 @@ public class LigacaoBD {
 
     // Método para estabelecer a ligação à base de dados
     public static Connection ligar() {
-        // Tentar estabelecer a ligação à base de dados usando as configurações fornecidas
+        // Tentar estabelecer a ligação à base de dados usando as configurações
+        // fornecidas
         try {
             // Criar a ligação usando DriverManager e retornar a conexão
             Connection con = DriverManager.getConnection(
